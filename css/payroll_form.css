@@ -66,4 +66,50 @@ body{
     padding-bottom: 20px;
 }
 
+.row-content{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 18px;
+    align-items: center;
+    border: 0px solid green;
+}
+
+.label{
+    min-width: 140px;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.text{
+    font-size: 16px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+}
+.input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.profile-radio-content{
+    display: flex;
+    flex-direction: row;
+}
+.profile-radio-content > label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile{
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+
 *{box-sizing: border-box;}
