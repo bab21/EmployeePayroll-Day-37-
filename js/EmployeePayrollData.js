@@ -34,9 +34,8 @@ class EmployeePayrollData{
         return this._salary;
     }
     set startDate(date) {
-        const options = { year: "numeric", month: "long", day: "numeric" };
-        const employeeDate = date === undefined ? "undefined" :
-          date.toLocaleDateString("en-US", options);
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        const employeeDate = date.toLocaleDateString("en-US", options);
         this._startDate = employeeDate;
     }
     get startDate(){
