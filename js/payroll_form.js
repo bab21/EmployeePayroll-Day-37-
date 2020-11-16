@@ -30,6 +30,30 @@ const save = ()=>{
     }
 }
 
+const resetForm = ()=>{
+    setValue('#name','');
+    unsetSelectedValues('[name=profile]');
+    unsetSelectedValues('[name=gender]');
+    unsetSelectedValues('[name=department]');
+    setValue('#salary','');
+    setValue('#notes','');
+    setValue('#day','1');
+    setValue('#month','January');
+    setValue('#year','2020');
+}
+
+const unsetSelectedValues=(propertyValue)=>{
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item=>{
+        item.checked = false;
+    });
+}
+
+const setValue =(id,value)=>{
+    const element = document.querySelector(id);
+    element.value=value;
+}
+
 function createAndUpdateStorage(employeePayrollData){
     let employeePayrollList= JSON.parse(localStorage.getItem("EmployeePayrollList"));
     if(employeePayrollList!=undefined){
@@ -52,7 +76,7 @@ const createEmployeePayrollData = () =>{
     }
     employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
     employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
-    employeePayrollData.departments=getSelectedValues('[name=department]').pop();
+    employeePayrollData.departments=getSelectedValues('[name=department]');
     console.log("department "+employeePayrollData.departments);
     employeePayrollData.salary=getInputValueById('#salary');
     employeePayrollData.notes=getInputValueById('#notes');
